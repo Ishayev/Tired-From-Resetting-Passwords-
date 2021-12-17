@@ -1,5 +1,6 @@
 ## We create TXT file for each user with less the 11 days left to change password, and only himself or domain admin can read the TXT! ##
 ## Also can have a nice excel with all users details. ##
+## You can have a program or Task Scheduler run it each day ##
 
 ## Setting ExpiredUsers and getting information from AD ##
 Import-Module ActiveDirectory
@@ -12,6 +13,8 @@ $ExpiredUsers = Get-ADUser -Filter {(PasswordLastSet -gt $expiredDate) -and (Pas
 ## Exporting information into CSV, you can watch the status of all your users remaining time to change password ##
 $ExpiredUsers | Export-Csv Z:\daniboy.csv
 
+## Deletion of TXT should be run after the first time you run the loop below, so each time you get updated information ##
+Get-ChildItem -Path X:\testing -Include *.* -File -Recurse | foreach { $_.Delete()}
 
 ## Making a loop that will show me only users with 10 days left to change passwords ##
 for($i=0;$i -lt $ExpiredUsers.count;$i++){
@@ -44,5 +47,6 @@ $Acl.AddAccessRule($rule)
 Set-Acl -Path $b -ACLObject $Acl
 }
 }
+
 
  
