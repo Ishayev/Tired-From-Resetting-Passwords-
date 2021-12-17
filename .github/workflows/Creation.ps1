@@ -1,5 +1,5 @@
 ## We create TXT file for each user with less the 11 days left to change password, and only himself or domain admin can read the TXT! ##
-## Also can have a nice excel with all users details. ##
+## Also can have a nice excel with all users remaining time to change password. ##
 ## You can have a program or Task Scheduler run it each day ##
 
 ## Setting ExpiredUsers and getting information from AD ##
