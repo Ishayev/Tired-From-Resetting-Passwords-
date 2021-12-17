@@ -32,7 +32,7 @@ GetFileName([ref]$fileName)
 ## makes $filename=USER@DOMAIN.txt ##
 new-item -path X:\testing\ -name $filename -itemtype file
 ## Write remaining days to change password and whatever we would like the user to know ##
-Set-Content X:\testing\$fileName ("Days Left To Change Password:" + " " + $ExpiredUsers.DaysUntilExpired[$i] + " "+ "If you need any help please contact helpdesk@DOMAIN or " )
+Set-Content X:\testing\$fileName ("Days Left To Change Password:" + " " + $ExpiredUsers.DaysUntilExpired[$i] + " "+ "If you need any help please contact helpdesk@DOMAIN or "Phone Number")
 
 ## NTFS- We create a folder with only ADMIN permission, for example X:\testing ##
 ## Now we set for each text file only the user himself a modify permission ##
