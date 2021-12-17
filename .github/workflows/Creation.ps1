@@ -1,3 +1,6 @@
+## We create TXT file for each user with less the 11 days left to change password, and only himself or domain admin can read the TXT! ##
+## Also can have a nice excel with all users details. ##
+
 ## Setting ExpiredUsers and getting information from AD ##
 Import-Module ActiveDirectory
 $MaxPwdAge = (Get-ADDefaultDomainPasswordPolicy).MaxPasswordAge.Days
