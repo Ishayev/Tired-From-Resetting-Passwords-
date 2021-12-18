@@ -1,4 +1,5 @@
 ## Saving this file as ps1 and setting default app for ps1 as powershell ##
+## Now the user will need only to click on the file to find out if he needs to change password in the upcoming 10 days ##
 
 $a=whoami /upn
 $b="X:\testing\" + $a + ".txt"
